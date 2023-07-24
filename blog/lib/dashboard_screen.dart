@@ -6,7 +6,19 @@ class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('test1')),
+      appBar: AppBar(
+        title: const Text('Blog'),
+        backgroundColor: Colors.black,
+      ),
+      body: const Center(
+        child: Text(
+          '블로그용입니다.',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ),
     );
   }
 }

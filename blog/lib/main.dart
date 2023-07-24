@@ -1,27 +1,24 @@
-// Flutter와 Material 디자인 라이브러리를 가져옵니다.
+import 'package:blog/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 
-// StatefulWidget을 확장하여 LoginPage 클래스를 만듭니다.
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
-
-  @override
-  LoginPageState createState() => LoginPageState();
+void main() async {
+  runApp(const MyApp());
 }
 
-// State를 확장하여 _LoginPageState 클래스를 만듭니다.
-class LoginPageState extends State<LoginPage> {
-  // TextEditingController 객체를 사용하여 텍스트 필드의 입력을 관리합니다.
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          // 앱 바 제목 설정
-          title: const Text('로그인'),
-        ),
-      ),
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Blog',
+      home: DashboardScreen(),
     );
   }
 }
