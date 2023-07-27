@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -10,14 +11,17 @@ class DashboardScreen extends StatelessWidget {
         title: const Text('Blog'),
         backgroundColor: Colors.black,
       ),
-      body: const Center(
-        child: Text(
-          '블로그용입니다.',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.w500,
+      body: Column(
+        children: [
+          Center(
+            child: 'Bye World'
+                .text
+                .color(Colors.amber)
+                .size(24)
+                .fontWeight(FontWeight.w500)
+                .make(),
           ),
-        ),
+        ],
       ),
     );
   }
