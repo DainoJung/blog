@@ -1,4 +1,4 @@
-import 'package:blog/dashboard_screen.dart';
+import 'package:blog/s_setting.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
