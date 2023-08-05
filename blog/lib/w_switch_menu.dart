@@ -1,5 +1,4 @@
-import 'dart:io';
-
+import 'package:blog/w_os_switch.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -16,9 +15,7 @@ class SwitchMenu extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Platform.isIOS
-            ? CupertinoSwitch(value: isOn, onChanged: onChanged)
-            : Switch(value: isOn, onChanged: onChanged),
+        OsSwitch(value: isOn, onChanged: onChanged),
       ],
     ).centered();
   }
