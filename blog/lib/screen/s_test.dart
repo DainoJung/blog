@@ -1,14 +1,15 @@
 import 'package:blog/screen/s_new_page.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class TestScreen extends StatefulWidget {
-  const TestScreen({super.key});
+class TestPage extends StatefulWidget {
+  const TestPage({super.key});
 
   @override
-  State<TestScreen> createState() => _TestScreenState();
+  State<TestPage> createState() => _TestPageState();
 }
 
-class _TestScreenState extends State<TestScreen> {
+class _TestPageState extends State<TestPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,9 +20,7 @@ class _TestScreenState extends State<TestScreen> {
         child: TextButton(
           child: const Text('Go to Page'),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return const NewPage();
-            }));
+            context.pushNamed('new');
           },
         ),
       ),
