@@ -9,7 +9,6 @@ class DashboardScreen extends StatefulWidget {
 
 class _DashboardScreenState extends State<DashboardScreen> {
   late int index;
-  bool isPushOn = false;
 
   @override
   void initState() {

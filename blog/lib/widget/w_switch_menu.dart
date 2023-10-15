@@ -1,4 +1,4 @@
-import 'package:blog/w_os_switch.dart';
+import 'package:blog/widget/w_os_switch.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
