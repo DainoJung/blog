@@ -1,6 +1,4 @@
-import 'package:blog/screen/s_new_page.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class TestPage extends StatefulWidget {
   const TestPage({super.key});
@@ -10,18 +8,48 @@ class TestPage extends StatefulWidget {
 }
 
 class _TestPageState extends State<TestPage> {
+  int value = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('화면 이동'),
+        title: const Text('CallBack'),
       ),
-      body: Center(
-        child: TextButton(
-          child: const Text('Go to Page'),
-          onPressed: () {
-            context.pushNamed('new');
-          },
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text('Count: $value', style: const TextStyle(fontSize: 30)),
+          TestButton(upCount),
+        ],
+      ),
+    );
+  }
+
+  void upCount(int addValue) => setState(() => value += addValue);
+}
+
+class TestButton extends StatelessWidget {
+  final Function(int) callback;
+  const TestButton(this.callback, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () => callback.call(1),
+      onDoubleTap: () => callback.call(5),
+      onLongPress: () => callback.call(10),
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 8),
+        width: double.infinity,
+        child: Center(
+          child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+            decoration: BoxDecoration(border: Border.all()),
+            child: const Text(
+              'Up',
+              style: TextStyle(fontSize: 24),
+            ),
+          ),
         ),
       ),
     );

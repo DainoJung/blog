@@ -1,7 +1,5 @@
-import 'package:blog/screen/s_new_page.dart';
 import 'package:blog/screen/s_test.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -17,22 +15,11 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return MaterialApp(
+      theme: ThemeData(),
       debugShowCheckedModeBanner: false,
       title: 'Blog',
-      routerConfig: GoRouter(
-        routes: [
-          GoRoute(
-              path: '/',
-              name: 'home',
-              builder: (context, _) => const TestPage()),
-          GoRoute(
-              path: '/new',
-              name: 'new',
-              builder: (context, _) => const NewPage()),
-        ],
-        initialLocation: '/',
-      ),
+      home: const TestPage(),
     );
   }
 }
